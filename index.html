@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Envater Satin alma rehberi</title>
+</head>
+<body bgcolor= "#000000" text= "gold">
+
+  First Name: <input type="text" id="deger" value="">
+  <button onclick="myFunction()">hesapla</button>
+  
+  <p id="sonuc"></p>
+  <script>
+    i16 = 330
+    i8 = 180
+    i4 = 100
+    i1 = 30
+
+    function myFunction() {
+      n=document.getElementById("deger").value
+      document.getElementById("sonuc").innerHTML = null
+      if(n >=192){
+        print("Zaten 192 ye ulasmissin!!");}
+      else{
+        x = n/16 | 0;
+        y = (n-x*16)/8 | 0;
+        z = (n-x*16 - y*8)/4 | 0;
+        t = (n-x*16 - y*8 - z*4)| 0;
+        fiyat = x*i16 + y*i8 + z*i4 + t*i1;
+        if(x!==0){
+          document.getElementById("sonuc").innerHTML ="<br>"+ x +" tane +16";}
+        if(y!==0){
+          document.getElementById("sonuc").innerHTML +="<br>"+ y +" tane +8";}
+        if(z!==0){
+          document.getElementById("sonuc").innerHTML +="<br>"+ z +" tane +4";}
+        if(t!==0){
+          document.getElementById("sonuc").innerHTML +="<br>"+ t +" tane +1";}
+        document.getElementById("sonuc").innerHTML +="<br>"+ "Toplam inci Tutari : " + fiyat
+      }
+    }
+  </script>
+</body>
+</html>
